@@ -13,7 +13,7 @@ import com.damiaoregis.workshopmongo.services.UserService;
 
 @RestController
 @RequestMapping(value = "/users")
-public class UserResouce {
+public class UserResource {
     @Autowired
     UserService service;
 
