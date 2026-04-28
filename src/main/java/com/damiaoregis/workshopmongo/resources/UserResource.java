@@ -15,7 +15,7 @@ import com.damiaoregis.workshopmongo.services.UserService;
 @RequestMapping(value = "/users")
 public class UserResource {
     @Autowired
-    UserService service;
+    private UserService service;
 
     @RequestMapping(method=RequestMethod.GET)
     public ResponseEntity<List<User>> findAll() {
