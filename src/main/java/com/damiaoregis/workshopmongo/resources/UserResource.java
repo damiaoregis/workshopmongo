@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.damiaoregis.workshopmongo.domain.Post;
 import com.damiaoregis.workshopmongo.domain.User;
 import com.damiaoregis.workshopmongo.dto.UserDTO;
 import com.damiaoregis.workshopmongo.services.UserService;
 
 import jakarta.servlet.ServletException;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping(value = "/users")
@@ -59,4 +62,11 @@ public class UserResource {
         service.update(obj);
         return ResponseEntity.noContent().build();
     }
+
+    @RequestMapping(value = "/{id}/posts", method=RequestMethod.GET)
+    public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+        User obj = service.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
+    }
+    
 }
