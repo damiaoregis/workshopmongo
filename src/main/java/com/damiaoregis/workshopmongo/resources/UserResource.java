@@ -19,9 +19,6 @@ import com.damiaoregis.workshopmongo.domain.User;
 import com.damiaoregis.workshopmongo.dto.UserDTO;
 import com.damiaoregis.workshopmongo.services.UserService;
 
-import jakarta.servlet.ServletException;
-import org.springframework.web.bind.annotation.RequestParam;
-
 
 @RestController
 @RequestMapping(value = "/users")
